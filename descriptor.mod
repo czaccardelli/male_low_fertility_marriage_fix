@@ -6,4 +6,4 @@ tags={
 	"Character Interactions"
 }
 name="Marriage Candidate Fixes"
-supported_version="1.1.2"
+supported_version="1.1.3"
