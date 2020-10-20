@@ -254,34 +254,6 @@ marriage_ai_accept_modifier = {
 		desc = YOU_HAVE_TOO_MANY_ALLIANCES
 	}
 
-	##########
-	# CLAIMS #
-	##########
-
-	modifier = {
-		marriage_candidate_will_move_to_foreign_court = yes
-		scope:secondary_recipient = {
-			every_claim = {
-				limit = {
-					holder = scope:recipient
-				}
-				# Lower will to marry off characters who have claims on recipient's land if they will move to foreign courts
-				add = {
-					value = tier
-					multiply = -10 
-				}
-			}
-		}
-	}
-	modifier = {
-		marriage_candidate_will_move_to_foreign_court = yes
-		scope:secondary_recipient = {
-			has_claim_on = scope:recipient.primary_title
-		}
-		# Extremely unwilling to marry off characters who hold a claim on their primary title if they will move to a foreign court
-		add = -100
-	}
-
 	####################
 	# TIER DIFFERENCES #
 	####################
