@@ -995,23 +995,23 @@ marriage_ai_accept_modifier = {
 			}
 			NOR = {
 				this = scope:recipient
-				is_close_or_extended_family_of = scope:recipient
+				is_close_family_of = scope:recipient
 			}
 		}
 		scope:secondary_actor = {
 			is_landed = no
-			NOT = { is_close_or_extended_family_of = scope:secondary_recipient }
+			NOT = { is_close_family_of = scope:secondary_recipient }
 		}
 		desc = VALUABLE_CLAIMANT
 	}
 	
-	modifier = { # Reluctance in marrying off Claimants to my own titles, if I am not related to the secondary_recipient. I'd rather keep the claimants under lock and key!
+	modifier = { # Reluctance in marrying off Claimants to my own titles, if I am not close family of the secondary_recipient. I'd rather keep the claimants under lock and key!
 		add = -50
 		scope:secondary_recipient = {
 			any_claim = {
 				holder = scope:recipient
 			}
-			NOT = { is_close_or_extended_family_of = scope:recipient }
+			NOT = { is_close_family_of = scope:recipient }
 		}
 		desc = CLAIMANT_TO_MY_TITLES
 	}
