@@ -1,0 +1,20 @@
+# uses same scopes as marriage_ai_accept_modifier
+marriage_candidate_will_move_to_foreign_court = {
+    OR = {
+        scope:secondary_recipient = {
+            # if the recipient is female and unlanded they will go to husband's court
+            AND = {
+                is_female = yes
+                is_landed = no
+            }
+            # if the recipient is male and unlanded they will go to wife's court if she is landed
+            AND = {
+                is_female = no
+                is_landed = no
+                scope:secondary_actor = {
+                    is_landed = yes
+                }
+            }
+        }
+    }
+}
